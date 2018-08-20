@@ -13,14 +13,39 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NumberCollectionViewCell" customModule="TotoShow" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="151" height="161"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="151" height="161"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-kr-Iof">
+                        <rect key="frame" x="0.0" y="0.0" width="151" height="161"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCp-JO-HYG">
+                        <rect key="frame" x="54.5" y="71" width="42.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
             </view>
-            <color key="backgroundColor" red="0.82745098039999998" green="0.058823529409999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QkE-kr-Iof" secondAttribute="trailing" id="6bU-4j-msV"/>
+                <constraint firstItem="SCp-JO-HYG" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="6nP-XO-3ts"/>
+                <constraint firstItem="QkE-kr-Iof" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="DL3-kM-iTm"/>
+                <constraint firstItem="SCp-JO-HYG" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="eDt-VU-jkB"/>
+                <constraint firstAttribute="bottom" secondItem="QkE-kr-Iof" secondAttribute="bottom" id="h6h-lR-q0l"/>
+                <constraint firstItem="QkE-kr-Iof" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="vSp-dB-yj2"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="151" height="161"/>
+            <connections>
+                <outlet property="ballImagemView" destination="QkE-kr-Iof" id="JBh-nA-w71"/>
+                <outlet property="numberLabel" destination="SCp-JO-HYG" id="Wdl-PK-TXl"/>
+            </connections>
+            <point key="canvasLocation" x="85.5" y="109.5"/>
         </collectionViewCell>
     </objects>
 </document>

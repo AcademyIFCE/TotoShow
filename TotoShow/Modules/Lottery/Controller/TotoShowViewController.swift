@@ -20,6 +20,10 @@ class TotoShowViewController: UIViewController {
     private var userNumbers: [Int] = [10,2,60,12,51,47,11,1,52,33,32,8,9,21,44,57,47,19,24,39]
     private let numberSize: CGFloat = UIScreen.main.bounds.width/10
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.loadNumbers()
@@ -27,8 +31,10 @@ class TotoShowViewController: UIViewController {
         
         self.lotteryCollectionView.delegate = self
         self.lotteryCollectionView.dataSource = self
+        self.lotteryCollectionView.allowsSelection = false
         self.cardCollectionView.delegate = self
         self.cardCollectionView.dataSource = self
+        self.cardCollectionView.allowsMultipleSelection = true
     }
     
     private func setupCollection() {
@@ -58,7 +64,22 @@ extension TotoShowViewController : UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NumberCollectionViewCell.reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NumberCollectionViewCell.reuseIdentifier, for: indexPath) as? NumberCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        let number: Int
+        if collectionView == lotteryCollectionView {
+            number = numbers[indexPath.row]
+            cell.isSelected = true
+        } else {
+            number = userNumbers[indexPath.row]
+            cell.ballImagemView.image = #imageLiteral(resourceName: "whiteBall")
+            //            cell.isSelected = true //TODO: Trocar quando tiver camada de modelo
+        }
+        
+        cell.numberLabel.text = "\(number)"
+        
         return cell
     }
 
