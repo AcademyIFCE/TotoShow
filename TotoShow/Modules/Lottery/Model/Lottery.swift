@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 extension Array where Element: Equatable{
     func distinct(elements: [Element] = []) -> [Element] {
@@ -22,6 +21,7 @@ class Lottery {
     private let lotteryRange: CountableClosedRange<Int>
     var pickedNumbers = [Int]()
     var draft: Timer?
+    var requiredBalls: Int = 0
     
     init(range: CountableClosedRange<Int>) {
         self.lotteryRange = range
@@ -57,12 +57,14 @@ class Lottery {
         }
     }
     
-    func drafts() {
-        
+    func isHeAWinner(markedNumbers: [Int], required: Int? = nil) -> Bool{
+        let requiredBalls = required ?? self.requiredBalls
+        return markedNumbers.count == requiredBalls
     }
     
     // Picks a random unique number at time interval and notifies the subscriber. After the winner number has been reached, it begins to mock for a winner, it invalidates the timer after winner is found.
     func beginDraft(winnerFrom numbers: Int, interval: TimeInterval, completion: @escaping ([Int], Bool) -> Void) {
+        requiredBalls = numbers
         draft = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { [unowned self] timer in
             var hasWinner = false
             do {

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,7 +34,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0X3-fT-TAC">
-                    <rect key="frame" x="0.0" y="182.5" width="375" height="80"/>
+                    <rect key="frame" x="0.0" y="183" width="375" height="80"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="sM8-5Y-QeN"/>
@@ -60,8 +59,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="110" height="92"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2º Prêmio R$ 20.000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QB-I8-A5k">
-                                    <rect key="frame" x="16" y="31" width="78" height="31.5"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                    <rect key="frame" x="16" y="31.5" width="78" height="29"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -88,8 +87,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="110.5" height="92"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1º Prêmio R$ 20.000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOi-St-0GD">
-                                    <rect key="frame" x="16" y="30.5" width="78.5" height="31.5"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                    <rect key="frame" x="16" y="31.5" width="78.5" height="29"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -117,14 +116,14 @@
                     </constraints>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yu-0o-JDL" customClass="HeaderView" customModule="TotoShow" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="100" width="375" height="66.5"/>
+                    <rect key="frame" x="0.0" y="100" width="375" height="67"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="Bolas chamadas"/>
                     </userDefinedRuntimeAttributes>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YD-di-GZV" customClass="HeaderView" customModule="TotoShow" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="278.5" width="375" height="67"/>
+                    <rect key="frame" x="0.0" y="279" width="375" height="66.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="title" value="Sua cartela"/>
@@ -160,8 +159,8 @@
         <tapGestureRecognizer id="Zyt-UR-KAo"/>
     </objects>
     <resources>
-        <image name="letreiroQuadrado" width="72" height="75"/>
-        <image name="letreiroQuadradoApagado" width="72" height="75"/>
+        <image name="letreiroQuadrado" width="144" height="151"/>
+        <image name="letreiroQuadradoApagado" width="144" height="151"/>
         <image name="logo" width="200" height="200"/>
     </resources>
 </document>
