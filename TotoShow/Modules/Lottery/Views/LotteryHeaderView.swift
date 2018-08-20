@@ -8,11 +8,17 @@
 
 import UIKit
 
-class LotteryHeaderView: UICollectionReusableView {
+class LotteryHeaderView: UICollectionReusableView, ReusableView, NibLoadableView {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.commonInit()
     }
     
+    private func commonInit() {
+        Bundle.main.loadNibNamed(LotteryHeaderView.reuseIdentifier, owner: self, options: nil)
+        
+    }
 }
