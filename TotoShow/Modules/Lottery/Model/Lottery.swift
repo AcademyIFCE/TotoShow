@@ -9,6 +9,7 @@
 import Foundation
 
 extension Array where Element: Equatable{
+    //returns an array with only distinct elements
     func distinct(elements: [Element] = []) -> [Element] {
         let itens = elements.count == 0 ? self : elements
         return itens.reduce([], {
@@ -41,11 +42,13 @@ class Lottery {
         }
     }
     
+    //Returns a random number on a given range, the default range is the one defined on the lottery creation
     func randomNumberInRange(range: CountableClosedRange<Int>? = nil) -> Int{
         let valueRange = range ?? lotteryRange
         return Int(arc4random_uniform(UInt32(valueRange.upperBound))) + (valueRange.lowerBound)
     }
     
+    //Returns a unique number in a range given a array of ints, range default parameter is the one defined at the lottery instatiation
     func uniqueNumber(from itens: [Int], range: CountableClosedRange<Int>? = nil) throws -> Int {
         let valueRange = range ?? lotteryRange
         let distinctItens = itens.distinct()
@@ -57,6 +60,7 @@ class Lottery {
         }
     }
     
+    //Checks if the player has win the game
     func isHeAWinner(markedNumbers: [Int], required: Int? = nil) -> Bool{
         let requiredBalls = required ?? self.requiredBalls
         return markedNumbers.count == requiredBalls

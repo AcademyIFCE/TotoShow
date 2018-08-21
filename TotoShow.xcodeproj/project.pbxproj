@@ -25,6 +25,7 @@
 		53F8F2492126FE7800442CBE /* LotteryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53F8F2472126FE7800442CBE /* LotteryHeaderView.xib */; };
 		53F8F24D21270AD800442CBE /* numbers.json in Resources */ = {isa = PBXBuildFile; fileRef = 53F8F24C21270AD800442CBE /* numbers.json */; };
 		53F8F24E21271A0600442CBE /* TotoShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53F8F2392126EC6F00442CBE /* TotoShowViewController.xib */; };
+		DA62E3E4212B98B80027B962 /* TotoShowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA62E3E3212B98B80027B962 /* TotoShowDelegate.swift */; };
 		DA84FD6E212AF836006C8CF0 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84FD6D212AF836006C8CF0 /* Card.swift */; };
 		DA84FD70212B472E006C8CF0 /* TotoShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84FD6F212B472E006C8CF0 /* TotoShowModel.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		53F8F2462126FE7800442CBE /* LotteryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteryHeaderView.swift; sourceTree = "<group>"; };
 		53F8F2472126FE7800442CBE /* LotteryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LotteryHeaderView.xib; sourceTree = "<group>"; };
 		53F8F24C21270AD800442CBE /* numbers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = numbers.json; sourceTree = "<group>"; };
+		DA62E3E3212B98B80027B962 /* TotoShowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotoShowDelegate.swift; sourceTree = "<group>"; };
 		DA84FD6D212AF836006C8CF0 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		DA84FD6F212B472E006C8CF0 /* TotoShowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotoShowModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				53649CBA212AF65E00A9FE24 /* Lottery.swift */,
 				DA84FD6D212AF836006C8CF0 /* Card.swift */,
 				DA84FD6F212B472E006C8CF0 /* TotoShowModel.swift */,
+				DA62E3E3212B98B80027B962 /* TotoShowDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				53E0FE5821260ED200B4B01B /* ViewController.swift in Sources */,
 				53649CB8212AF25300A9FE24 /* PrizeBoardView.swift in Sources */,
 				53E0FE5621260ED200B4B01B /* AppDelegate.swift in Sources */,
+				DA62E3E4212B98B80027B962 /* TotoShowDelegate.swift in Sources */,
 				DA84FD6E212AF836006C8CF0 /* Card.swift in Sources */,
 				DA84FD70212B472E006C8CF0 /* TotoShowModel.swift in Sources */,
 				53F8F2482126FE7800442CBE /* LotteryHeaderView.swift in Sources */,

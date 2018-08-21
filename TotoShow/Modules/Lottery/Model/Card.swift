@@ -23,12 +23,14 @@ class Card: Decodable {
         numbers = numbersFromJson(data: file).sorted()
     }
     
+    //Parse numbers from a given JSON data
     func numbersFromJson(data: Data) -> [Int] {
         let decoder = JSONDecoder()
         let card = try? decoder.decode(Card.self, from: data)
         return card?.numbers ?? []
     }
     
+    //Add a number to the marked numbers
     func addNumberToCard(number: Int, cardNumbers: [Int]? = nil) {
         let numbersArray = cardNumbers ?? numbers
         if !markedNumbers.contains(number) && numbersArray.contains(number) {

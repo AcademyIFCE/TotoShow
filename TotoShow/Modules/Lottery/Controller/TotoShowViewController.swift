@@ -10,14 +10,13 @@ import UIKit
 import CoreData
 
 class TotoShowViewController: UIViewController {
-
+    
     
     @IBOutlet var lotteryCollectionView: UICollectionView!
     @IBOutlet weak var cardCollectionView: UICollectionView!
     @IBOutlet weak var topStackView: UIStackView!
     
-    private var lottery = Lottery(range: 1...50)
-    private var card = Card()
+    private var gameDelegate: TotoCardDelegate!
     private let numberSize: CGFloat = UIScreen.main.bounds.width/10
     
     override var prefersStatusBarHidden: Bool {
@@ -26,6 +25,8 @@ class TotoShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gameDelegate = TotoShowModel(delegate: self)
         self.setupCollection()
         
         self.lotteryCollectionView.delegate = self
@@ -34,15 +35,6 @@ class TotoShowViewController: UIViewController {
         self.cardCollectionView.delegate = self
         self.cardCollectionView.dataSource = self
         self.cardCollectionView.allowsMultipleSelection = true
-        
-        lottery.beginDraft(winnerFrom: 20, interval: 2.5) { _, winner in
-            self.lotteryCollectionView.performBatchUpdates({
-                self.lotteryCollectionView.insertItems(at: [IndexPath(item: 0, section: 0)])
-            }, completion: nil)
-            if winner {
-                print("Someone winned")
-            }
-        }
     }
     
     private func setupCollection() {
@@ -50,15 +42,15 @@ class TotoShowViewController: UIViewController {
         self.lotteryCollectionView.register(cellNib, forCellWithReuseIdentifier: NumberCollectionViewCell.reuseIdentifier)
         self.cardCollectionView.register(cellNib, forCellWithReuseIdentifier: NumberCollectionViewCell.reuseIdentifier)
     }
-
+    
 }
 
 
 extension TotoShowViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == lotteryCollectionView ? lottery.pickedNumbers.count : card.numbers.count
+        return collectionView == lotteryCollectionView ? gameDelegate.numberOfPickedBalls() : gameDelegate.numberOfCards()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,10 +61,10 @@ extension TotoShowViewController : UICollectionViewDataSource, UICollectionViewD
         
         let number: Int
         if collectionView == lotteryCollectionView {
-            number = lottery.pickedNumbers[indexPath.row]
+            number = gameDelegate.numberForPicked(row: indexPath.row)
             cell.isSelected = true
         } else {
-            number = card.numbers[indexPath.row]
+            number = gameDelegate.numberForCard(row: indexPath.row)
             cell.ballImagemView.image = #imageLiteral(resourceName: "whiteBall")
             //            cell.isSelected = true //TODO: Trocar quando tiver camada de modelo
         }
@@ -84,15 +76,12 @@ extension TotoShowViewController : UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == cardCollectionView {
-            card.addNumberToCard(number: card.numbers[indexPath.row])
-            if lottery.isHeAWinner(markedNumbers: card.markedNumbers) {
-                print("ganhou")
-            }
+            gameDelegate.addNumberToCard(index: indexPath.row)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return lottery.pickedNumbers.contains(card.numbers[indexPath.row])
+        return gameDelegate.shouldSelectBall(of: indexPath.row)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -116,5 +105,23 @@ extension TotoShowViewController : UICollectionViewDataSource, UICollectionViewD
         } else {
             return UIEdgeInsets(top: 20, left: 10, bottom: 0, right: 10)
         }
+    }
+}
+
+extension TotoShowViewController: TotoLotteryDelegate {
+    func updateNumbers(with itens: [Int]) {
+        self.lotteryCollectionView.performBatchUpdates({
+            self.lotteryCollectionView.insertItems(at: [IndexPath(item: 0, section: 0)])
+        }, completion: nil)
+    }
+    
+    //Need fixing
+    func winnerFound(winner: String) {
+        let alert = UIAlertController(title: "Fim de Jogo", message: winner, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default) { [unowned self] _ in
+            self.gameDelegate.changePrize()
+            self.lotteryCollectionView.reloadData()
+        })
+        present(alert, animated: true, completion: nil)
     }
 }
