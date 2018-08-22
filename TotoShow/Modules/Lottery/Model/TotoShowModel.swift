@@ -51,7 +51,7 @@ class TotoShowModel {
     }
 }
 
-extension TotoShowModel: TotoCardDelegate {
+extension TotoShowModel {
     func numberForCard(row: Int) -> Int {
         switch prize {
         case .first:

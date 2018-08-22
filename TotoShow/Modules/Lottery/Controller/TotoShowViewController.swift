@@ -11,12 +11,11 @@ import CoreData
 
 class TotoShowViewController: UIViewController {
     
-    
     @IBOutlet var lotteryCollectionView: UICollectionView!
     @IBOutlet weak var cardCollectionView: UICollectionView!
     @IBOutlet weak var topStackView: UIStackView!
     
-    private var gameDelegate: TotoCardDelegate!
+    private var gameDelegate: TotoShowModel!
     private let numberSize: CGFloat = UIScreen.main.bounds.width/10
     
     override var prefersStatusBarHidden: Bool {
