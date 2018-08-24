@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TotoShowViewController" customModule="TotoShow">
+            <connections>
+                <outlet property="cardCollectionView" destination="wXQ-2Y-dzA" id="19z-fn-bcx"/>
+                <outlet property="lotteryCollectionView" destination="0X3-fT-TAC" id="lf9-Zw-6Kf"/>
+                <outlet property="topStackView" destination="Wej-ph-VmS" id="yug-da-hN3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wXQ-2Y-dzA">
+                    <rect key="frame" x="0.0" y="345.5" width="375" height="321.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="10" id="jxz-wf-wZj">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0X3-fT-TAC">
+                    <rect key="frame" x="0.0" y="183" width="375" height="80"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="sM8-5Y-QeN"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uee-yO-X79">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-ph-VmS">
+                    <rect key="frame" x="8" y="0.0" width="351" height="100"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="BrN-TU-tWt">
+                            <rect key="frame" x="0.0" y="0.0" width="110.5" height="92"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gf7-U3-UF5">
+                            <rect key="frame" x="120.5" y="0.0" width="110" height="92"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letreiroQuadrado" translatesAutoresizingMaskIntoConstraints="NO" id="UA7-A7-Fna">
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="92"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2º Prêmio R$ 20.000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QB-I8-A5k">
+                                    <rect key="frame" x="16" y="31.5" width="78" height="29"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstItem="UA7-A7-Fna" firstAttribute="top" secondItem="gf7-U3-UF5" secondAttribute="top" id="BxS-pd-B6t"/>
+                                <constraint firstItem="6QB-I8-A5k" firstAttribute="leading" secondItem="gf7-U3-UF5" secondAttribute="leading" constant="16" id="Jtn-NB-mNp"/>
+                                <constraint firstAttribute="trailing" secondItem="UA7-A7-Fna" secondAttribute="trailing" id="MW2-Dl-QRY"/>
+                                <constraint firstItem="UA7-A7-Fna" firstAttribute="leading" secondItem="gf7-U3-UF5" secondAttribute="leading" id="WTB-Vl-Vks"/>
+                                <constraint firstAttribute="trailing" secondItem="6QB-I8-A5k" secondAttribute="trailing" constant="16" id="Y7o-Qi-Kif"/>
+                                <constraint firstItem="6QB-I8-A5k" firstAttribute="centerY" secondItem="gf7-U3-UF5" secondAttribute="centerY" id="f2a-6t-GKe"/>
+                                <constraint firstAttribute="bottom" secondItem="UA7-A7-Fna" secondAttribute="bottom" id="mAL-3t-y2E"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="SYm-Gy-7Cn" appends="YES" id="dT4-mS-l1I"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFz-mx-agk">
+                            <rect key="frame" x="240.5" y="0.0" width="110.5" height="92"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letreiroQuadradoApagado" translatesAutoresizingMaskIntoConstraints="NO" id="LcG-TC-Wp9">
+                                    <rect key="frame" x="0.0" y="0.0" width="110.5" height="92"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1º Prêmio R$ 20.000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOi-St-0GD">
+                                    <rect key="frame" x="16" y="31.5" width="78.5" height="29"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <gestureRecognizers/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="LcG-TC-Wp9" secondAttribute="bottom" id="3OI-2J-a02"/>
+                                <constraint firstAttribute="trailing" secondItem="aOi-St-0GD" secondAttribute="trailing" constant="16" id="6ny-Q9-m1U"/>
+                                <constraint firstItem="aOi-St-0GD" firstAttribute="leading" secondItem="zFz-mx-agk" secondAttribute="leading" constant="16" id="6sk-c1-8Wj"/>
+                                <constraint firstItem="aOi-St-0GD" firstAttribute="centerY" secondItem="zFz-mx-agk" secondAttribute="centerY" id="8Ye-lm-tcn"/>
+                                <constraint firstItem="LcG-TC-Wp9" firstAttribute="top" secondItem="zFz-mx-agk" secondAttribute="top" id="H5T-vG-79J"/>
+                                <constraint firstItem="LcG-TC-Wp9" firstAttribute="leading" secondItem="zFz-mx-agk" secondAttribute="leading" id="XKv-Nx-30s"/>
+                                <constraint firstAttribute="trailing" secondItem="LcG-TC-Wp9" secondAttribute="trailing" id="bHL-Eq-cj4"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="Zyt-UR-KAo" appends="YES" id="UD3-OQ-ZSg"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="BrN-TU-tWt" secondAttribute="bottom" constant="8" id="3bj-eH-P4a"/>
+                        <constraint firstItem="gf7-U3-UF5" firstAttribute="bottom" secondItem="BrN-TU-tWt" secondAttribute="bottom" id="O4O-6L-4k1"/>
+                        <constraint firstItem="zFz-mx-agk" firstAttribute="bottom" secondItem="BrN-TU-tWt" secondAttribute="bottom" id="kum-b4-FiT"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yu-0o-JDL" customClass="HeaderView" customModule="TotoShow" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="100" width="375" height="67"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Bolas chamadas"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YD-di-GZV" customClass="HeaderView" customModule="TotoShow" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="279" width="375" height="66.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="title" value="Sua cartela"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.070588235294117646" green="0.0039215686274509803" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8yu-0o-JDL" firstAttribute="top" secondItem="Wej-ph-VmS" secondAttribute="bottom" id="3Uz-Ec-0eW"/>
+                <constraint firstItem="4YD-di-GZV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="6kP-d0-lgg"/>
+                <constraint firstItem="0X3-fT-TAC" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="7u8-g4-as1"/>
+                <constraint firstItem="wXQ-2Y-dzA" firstAttribute="top" secondItem="4YD-di-GZV" secondAttribute="bottom" id="AXj-Sc-gbp"/>
+                <constraint firstItem="8yu-0o-JDL" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Eef-FE-gIN"/>
+                <constraint firstItem="4YD-di-GZV" firstAttribute="top" secondItem="0X3-fT-TAC" secondAttribute="bottom" constant="16" id="GL5-1X-mLe"/>
+                <constraint firstItem="4YD-di-GZV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ilb-Xe-P0M"/>
+                <constraint firstItem="4YD-di-GZV" firstAttribute="height" secondItem="8yu-0o-JDL" secondAttribute="height" id="Ngn-nr-17m"/>
+                <constraint firstItem="Wej-ph-VmS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Nka-ys-koI"/>
+                <constraint firstItem="8yu-0o-JDL" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.1" id="R31-0z-4vt"/>
+                <constraint firstItem="0X3-fT-TAC" firstAttribute="top" secondItem="8yu-0o-JDL" secondAttribute="bottom" constant="16" id="XV3-Mq-0R9"/>
+                <constraint firstItem="wXQ-2Y-dzA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aPI-Al-Nnw"/>
+                <constraint firstItem="0X3-fT-TAC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aRM-07-Nxv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wXQ-2Y-dzA" secondAttribute="bottom" id="ddS-bI-ucf"/>
+                <constraint firstItem="8yu-0o-JDL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dwI-0E-EWV"/>
+                <constraint firstItem="Wej-ph-VmS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="ec7-jH-pez"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wej-ph-VmS" secondAttribute="trailing" constant="16" id="fRZ-3h-uN2"/>
+                <constraint firstItem="wXQ-2Y-dzA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hSx-Mz-gMT"/>
+                <constraint firstItem="Wej-ph-VmS" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.15" id="zxJ-VY-KsE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="69.5" y="53.5"/>
+        </view>
+        <tapGestureRecognizer id="SYm-Gy-7Cn"/>
+        <tapGestureRecognizer id="Zyt-UR-KAo"/>
+    </objects>
+    <resources>
+        <image name="letreiroQuadrado" width="144" height="151"/>
+        <image name="letreiroQuadradoApagado" width="144" height="151"/>
+        <image name="logo" width="200" height="200"/>
+    </resources>
+</document>

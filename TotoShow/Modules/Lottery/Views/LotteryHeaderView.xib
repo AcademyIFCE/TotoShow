@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="LotteryHeaderView" customModule="TotoShow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="114"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letreiro" translatesAutoresizingMaskIntoConstraints="NO" id="iSW-zz-Qlu">
+                    <rect key="frame" x="0.0" y="0.0" width="412" height="114"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScD-tK-O9G">
+                    <rect key="frame" x="185.5" y="47.5" width="42.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="iSW-zz-Qlu" firstAttribute="bottom" secondItem="VXr-Tz-HHm" secondAttribute="bottom" id="0ri-go-1WF"/>
+                <constraint firstItem="iSW-zz-Qlu" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" id="G5U-Ef-Gd8"/>
+                <constraint firstItem="ScD-tK-O9G" firstAttribute="centerY" secondItem="iSW-zz-Qlu" secondAttribute="centerY" id="ab0-8C-kog"/>
+                <constraint firstItem="iSW-zz-Qlu" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="al2-BT-Jfs"/>
+                <constraint firstItem="iSW-zz-Qlu" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="ouJ-rf-qvo"/>
+                <constraint firstItem="ScD-tK-O9G" firstAttribute="centerX" secondItem="iSW-zz-Qlu" secondAttribute="centerX" id="sev-iQ-MBr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="titleLabel" destination="ScD-tK-O9G" id="DDb-xw-5bB"/>
+            </connections>
+            <point key="canvasLocation" x="80" y="100"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="letreiro" width="370" height="79"/>
+    </resources>
+</document>
