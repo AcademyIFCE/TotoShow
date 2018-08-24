@@ -17,7 +17,6 @@
 		53E0FE6B21260ED300B4B01B /* TotoShowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0FE6A21260ED300B4B01B /* TotoShowTests.swift */; };
 		53E0FE7621260ED300B4B01B /* TotoShowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0FE7521260ED300B4B01B /* TotoShowUITests.swift */; };
 		53F8F23A2126EC6F00442CBE /* TotoShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8F2382126EC6F00442CBE /* TotoShowViewController.swift */; };
-		53F8F23C2126EC7C00442CBE /* TotoShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8F2382126EC6F00442CBE /* TotoShowViewController.swift */; };
 		53F8F2412126FD3D00442CBE /* NumberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8F23F2126FD3D00442CBE /* NumberCollectionViewCell.swift */; };
 		53F8F2422126FD3D00442CBE /* NumberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53F8F2402126FD3D00442CBE /* NumberCollectionViewCell.xib */; };
 		53F8F2452126FDAD00442CBE /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F8F2442126FDAD00442CBE /* ViewProtocols.swift */; };
@@ -375,7 +374,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				53E0FE6B21260ED300B4B01B /* TotoShowTests.swift in Sources */,
-				53F8F23C2126EC7C00442CBE /* TotoShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 489VWS49NR;
+				DEVELOPMENT_TEAM = 83XT2J75S2;
 				INFOPLIST_FILE = TotoShow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -551,7 +549,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 489VWS49NR;
+				DEVELOPMENT_TEAM = 83XT2J75S2;
 				INFOPLIST_FILE = TotoShow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

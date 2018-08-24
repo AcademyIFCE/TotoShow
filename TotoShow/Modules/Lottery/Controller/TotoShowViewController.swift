@@ -15,6 +15,12 @@ class TotoShowViewController: UIViewController {
     @IBOutlet weak var cardCollectionView: UICollectionView!
     @IBOutlet weak var topStackView: UIStackView!
     
+    @IBOutlet weak var firstPrizeImageView: UIImageView!
+    @IBOutlet weak var firstPrizeLabel: UILabel!
+    
+    @IBOutlet weak var secondPrizeImageView: UIImageView!
+    @IBOutlet weak var secondPrizeLabel: UILabel!
+    
     private var model: TotoShowModel!
     private let numberSize: CGFloat = UIScreen.main.bounds.width/10
     
@@ -42,6 +48,30 @@ class TotoShowViewController: UIViewController {
         self.cardCollectionView.register(cellNib, forCellWithReuseIdentifier: NumberCollectionViewCell.reuseIdentifier)
     }
     
+    private func changeLottery() {
+        self.model.changePrize()
+        self.changePrizeImageView(firstPrizeImageView)
+        self.changePrizeImageView(secondPrizeImageView)
+        self.changePrizeLabel(firstPrizeLabel)
+        self.changePrizeLabel(secondPrizeLabel)
+        firstPrizeImageView.isUserInteractionEnabled = !firstPrizeImageView.isUserInteractionEnabled
+        secondPrizeImageView.isUserInteractionEnabled = !secondPrizeImageView.isUserInteractionEnabled
+        self.lotteryCollectionView.reloadData()
+        self.cardCollectionView.reloadData()
+    }
+    
+    private func changePrizeImageView(_ imageView: UIImageView ) {
+        imageView.image = imageView.image == #imageLiteral(resourceName: "letreiroQuadrado") ? #imageLiteral(resourceName: "letreiroQuadradoApagado") : #imageLiteral(resourceName: "letreiroQuadrado")
+    }
+    
+    private func changePrizeLabel(_ label: UILabel ) {
+        label.isEnabled = !label.isEnabled
+    }
+    
+    @IBAction func didChangePrize(_ sender: Any) {
+        self.changeLottery()
+    }
+    
 }
 
 
@@ -64,8 +94,7 @@ extension TotoShowViewController : UICollectionViewDataSource, UICollectionViewD
             cell.isSelected = true
         } else {
             number = model.numberForCard(row: indexPath.row)
-            cell.ballImagemView.image = #imageLiteral(resourceName: "whiteBall")
-            //            cell.isSelected = true //TODO: Trocar quando tiver camada de modelo
+            cell.isSelected = model.shouldMarkBall(of: number)
         }
         
         cell.numberLabel.text = "\(number)"
@@ -118,7 +147,7 @@ extension TotoShowViewController: TotoLotteryDelegate {
     func winnerFound(winner: String) {
         let alert = UIAlertController(title: "Fim de Jogo", message: winner, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default) { [unowned self] _ in
-            self.model.changePrize()
+            self.changeLottery()
             self.lotteryCollectionView.reloadData()
         })
         present(alert, animated: true, completion: nil)

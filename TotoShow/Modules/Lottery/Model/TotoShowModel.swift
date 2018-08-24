@@ -80,6 +80,15 @@ extension TotoShowModel {
         }
     }
     
+    func shouldMarkBall(of number: Int) -> Bool {
+        switch prize {
+        case .first:
+            return firstCard.markedNumbers.contains(number)
+        case .second:
+            return secondCard.markedNumbers.contains(number)
+        }
+    }
+    
     func numberOfPickedBalls() -> Int {
         switch prize {
         case .first:

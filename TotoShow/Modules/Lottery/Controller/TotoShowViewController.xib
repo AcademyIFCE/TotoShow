@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +14,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TotoShowViewController" customModule="TotoShow">
             <connections>
                 <outlet property="cardCollectionView" destination="wXQ-2Y-dzA" id="19z-fn-bcx"/>
+                <outlet property="firstPrizeImageView" destination="UA7-A7-Fna" id="w56-Sc-EIX"/>
+                <outlet property="firstPrizeLabel" destination="6QB-I8-A5k" id="4uc-CB-ldh"/>
                 <outlet property="lotteryCollectionView" destination="0X3-fT-TAC" id="lf9-Zw-6Kf"/>
+                <outlet property="secondPrizeImageView" destination="LcG-TC-Wp9" id="kGj-nt-ocX"/>
+                <outlet property="secondPrizeLabel" destination="aOi-St-0GD" id="ooD-uY-2Ez"/>
                 <outlet property="topStackView" destination="Wej-ph-VmS" id="yug-da-hN3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -57,6 +62,10 @@
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letreiroQuadrado" translatesAutoresizingMaskIntoConstraints="NO" id="UA7-A7-Fna">
                                     <rect key="frame" x="0.0" y="0.0" width="110" height="92"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="SYm-Gy-7Cn" appends="YES" id="XbM-S9-IQ2"/>
+                                    </connections>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2º Prêmio R$ 20.000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QB-I8-A5k">
                                     <rect key="frame" x="16" y="31.5" width="78" height="29"/>
@@ -76,15 +85,16 @@
                                 <constraint firstItem="6QB-I8-A5k" firstAttribute="centerY" secondItem="gf7-U3-UF5" secondAttribute="centerY" id="f2a-6t-GKe"/>
                                 <constraint firstAttribute="bottom" secondItem="UA7-A7-Fna" secondAttribute="bottom" id="mAL-3t-y2E"/>
                             </constraints>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="SYm-Gy-7Cn" appends="YES" id="dT4-mS-l1I"/>
-                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFz-mx-agk">
                             <rect key="frame" x="240.5" y="0.0" width="110.5" height="92"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letreiroQuadradoApagado" translatesAutoresizingMaskIntoConstraints="NO" id="LcG-TC-Wp9">
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letreiroQuadradoApagado" translatesAutoresizingMaskIntoConstraints="NO" id="LcG-TC-Wp9">
                                     <rect key="frame" x="0.0" y="0.0" width="110.5" height="92"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="OKm-pu-dhH" appends="YES" id="idv-ZV-v4i"/>
+                                    </connections>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1º Prêmio R$ 20.000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOi-St-0GD">
                                     <rect key="frame" x="16" y="31.5" width="78.5" height="29"/>
@@ -104,9 +114,6 @@
                                 <constraint firstItem="LcG-TC-Wp9" firstAttribute="leading" secondItem="zFz-mx-agk" secondAttribute="leading" id="XKv-Nx-30s"/>
                                 <constraint firstAttribute="trailing" secondItem="LcG-TC-Wp9" secondAttribute="trailing" id="bHL-Eq-cj4"/>
                             </constraints>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="Zyt-UR-KAo" appends="YES" id="UD3-OQ-ZSg"/>
-                            </connections>
                         </view>
                     </subviews>
                     <constraints>
@@ -155,12 +162,20 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="69.5" y="53.5"/>
         </view>
-        <tapGestureRecognizer id="SYm-Gy-7Cn"/>
-        <tapGestureRecognizer id="Zyt-UR-KAo"/>
+        <tapGestureRecognizer id="SYm-Gy-7Cn">
+            <connections>
+                <action selector="didChangePrize:" destination="-1" id="xyZ-wO-hZZ"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="OKm-pu-dhH">
+            <connections>
+                <action selector="didChangePrize:" destination="-1" id="7qQ-Du-f0q"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="letreiroQuadrado" width="144" height="151"/>
-        <image name="letreiroQuadradoApagado" width="144" height="151"/>
+        <image name="letreiroQuadrado" width="72" height="75"/>
+        <image name="letreiroQuadradoApagado" width="72" height="75"/>
         <image name="logo" width="200" height="200"/>
     </resources>
 </document>
