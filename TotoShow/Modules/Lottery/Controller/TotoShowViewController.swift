@@ -143,9 +143,8 @@ extension TotoShowViewController: TotoLotteryDelegate {
         }, completion: nil)
     }
     
-    //Need fixing
     func winnerFound(winner: String) {
-        let alert = UIAlertController(title: "Fim de Jogo", message: winner, preferredStyle: .alert)
+        let alert = UIAlertController(title: "End of Game", message: winner, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default) { [unowned self] _ in
             self.changeLottery()
             self.lotteryCollectionView.reloadData()

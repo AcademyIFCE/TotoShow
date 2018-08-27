@@ -9,7 +9,6 @@
 import UIKit
 
 class HeaderView: UIView {
-
     
     @IBInspectable var title: String = "" {
         didSet {
@@ -49,7 +48,6 @@ class HeaderView: UIView {
     private func commonInit() {
         self.addSubview(imageView)
         self.addSubview(titleLabel)
-        
         
         NSLayoutConstraint.activate([
                 NSLayoutConstraint(item: titleLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0),

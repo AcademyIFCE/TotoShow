@@ -13,6 +13,7 @@ enum Prize {
     case second
 }
 
+/// Model for the Lottery with Two Prizes
 class TotoShowModel {
     private let firstPrize = Lottery(range: 1...50)
     private let secondPrize = Lottery(range: 1...50)
@@ -21,11 +22,19 @@ class TotoShowModel {
     private var prize: Prize = .second
     private weak var lotteryDelegate: TotoLotteryDelegate!
     
+    
+    /// Inits the model for the prizes
+    ///
+    /// - Parameter delegate: The object that will react to the drafts
     init(delegate: TotoLotteryDelegate) {
         lotteryDelegate = delegate
         startLottery(prize: .second)
     }
     
+    
+    /// Starts the draft for one of the two prizes on the model, it will only return a updated numbers for the prize being drafted at the moment.
+    ///
+    /// - Parameter prize: selected prize to start the draft
     private func startLottery(prize: Prize) {
         switch prize {
         case .first:
@@ -52,6 +61,11 @@ class TotoShowModel {
 }
 
 extension TotoShowModel {
+    
+    /// Returns a number from the card
+    ///
+    /// - Parameter row: the selected index to be returned
+    /// - Returns: the Number for the index passed
     func numberForCard(row: Int) -> Int {
         switch prize {
         case .first:
@@ -62,6 +76,10 @@ extension TotoShowModel {
 
     }
     
+    
+    /// Returns the quantity of numbers in the card
+    ///
+    /// - Returns: quantity of numbers in the card
     func numberOfCards() -> Int {
         switch prize {
         case .first:
@@ -71,6 +89,11 @@ extension TotoShowModel {
         }
     }
     
+    
+    /// Returns if the ball should be selectable, the ball can only be selected if has already been drafted
+    ///
+    /// - Parameter number: the index of the ball that wants to be selected
+    /// - Returns: If it can be selected or not
     func shouldSelectBall(of number: Int) -> Bool {
         switch prize {
         case .first:
@@ -80,6 +103,11 @@ extension TotoShowModel {
         }
     }
     
+    
+    /// Should automaticly select the balls, it will return true if the ball has already been marked by the player
+    ///
+    /// - Parameter number: the index of the ball to be marked
+    /// - Returns: If it should be marked or not
     func shouldMarkBall(of number: Int) -> Bool {
         switch prize {
         case .first:
@@ -89,6 +117,10 @@ extension TotoShowModel {
         }
     }
     
+    
+    /// Number of balls drafted till now
+    ///
+    /// - Returns: The number of drafted balls on the selected prize
     func numberOfPickedBalls() -> Int {
         switch prize {
         case .first:
@@ -98,6 +130,11 @@ extension TotoShowModel {
         }
     }
     
+    
+    /// Number for the row in the drafted balls
+    ///
+    /// - Parameter row: index of the wanted number
+    /// - Returns: number of the wanted index
     func numberForPicked(row: Int) -> Int {
         switch prize {
         case .first:
@@ -107,6 +144,10 @@ extension TotoShowModel {
         }
     }
     
+    
+    /// Add number to the card of the selected prize
+    ///
+    /// - Parameter index: index of the selected ball to be added
     func addNumberToCard(index: Int) {
         switch prize {
         case .first:
@@ -125,6 +166,8 @@ extension TotoShowModel {
         }
     }
     
+    
+    /// Toggle between prizes
     func changePrize() {
         switch prize {
         case .first:

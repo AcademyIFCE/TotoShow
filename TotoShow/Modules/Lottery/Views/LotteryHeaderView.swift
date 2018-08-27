@@ -19,6 +19,5 @@ class LotteryHeaderView: UICollectionReusableView, ReusableView, NibLoadableView
     
     private func commonInit() {
         Bundle.main.loadNibNamed(LotteryHeaderView.reuseIdentifier, owner: self, options: nil)
-        
     }
 }

@@ -11,7 +11,6 @@
 		53649CBB212AF65E00A9FE24 /* Lottery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53649CBA212AF65E00A9FE24 /* Lottery.swift */; };
 		53AF0FE921276A9F00D12662 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AF0FE821276A9F00D12662 /* HeaderView.swift */; };
 		53E0FE5621260ED200B4B01B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0FE5521260ED200B4B01B /* AppDelegate.swift */; };
-		53E0FE5821260ED200B4B01B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0FE5721260ED200B4B01B /* ViewController.swift */; };
 		53E0FE5D21260ED300B4B01B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E0FE5C21260ED300B4B01B /* Assets.xcassets */; };
 		53E0FE6021260ED300B4B01B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E0FE5E21260ED300B4B01B /* LaunchScreen.storyboard */; };
 		53E0FE6B21260ED300B4B01B /* TotoShowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E0FE6A21260ED300B4B01B /* TotoShowTests.swift */; };
@@ -52,7 +51,6 @@
 		53AF0FE821276A9F00D12662 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		53E0FE5221260ED200B4B01B /* TotoShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TotoShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E0FE5521260ED200B4B01B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		53E0FE5721260ED200B4B01B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		53E0FE5C21260ED300B4B01B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53E0FE5F21260ED300B4B01B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53E0FE6121260ED300B4B01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				53649CBA212AF65E00A9FE24 /* Lottery.swift */,
 				DA84FD6D212AF836006C8CF0 /* Card.swift */,
 				DA84FD6F212B472E006C8CF0 /* TotoShowModel.swift */,
-				DA62E3E3212B98B80027B962 /* TotoLotteryDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,7 +134,6 @@
 				53F8F2432126FD8D00442CBE /* Protocols */,
 				53F8F2362126EC3E00442CBE /* Modules */,
 				53E0FE5521260ED200B4B01B /* AppDelegate.swift */,
-				53E0FE5721260ED200B4B01B /* ViewController.swift */,
 				53E0FE5C21260ED300B4B01B /* Assets.xcassets */,
 				53E0FE5E21260ED300B4B01B /* LaunchScreen.storyboard */,
 				53E0FE6121260ED300B4B01B /* Info.plist */,
@@ -196,6 +192,7 @@
 		53F8F2432126FD8D00442CBE /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				DA62E3E3212B98B80027B962 /* TotoLotteryDelegate.swift */,
 				53F8F2442126FDAD00442CBE /* ViewProtocols.swift */,
 			);
 			path = Protocols;
@@ -358,7 +355,6 @@
 				53649CBB212AF65E00A9FE24 /* Lottery.swift in Sources */,
 				53F8F2412126FD3D00442CBE /* NumberCollectionViewCell.swift in Sources */,
 				53F8F2452126FDAD00442CBE /* ViewProtocols.swift in Sources */,
-				53E0FE5821260ED200B4B01B /* ViewController.swift in Sources */,
 				53649CB8212AF25300A9FE24 /* PrizeBoardView.swift in Sources */,
 				53E0FE5621260ED200B4B01B /* AppDelegate.swift in Sources */,
 				DA62E3E4212B98B80027B962 /* TotoLotteryDelegate.swift in Sources */,

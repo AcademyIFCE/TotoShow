@@ -13,7 +13,6 @@ class NumberCollectionViewCell: UICollectionViewCell, ReusableView, NibLoadableV
     @IBOutlet weak var ballImagemView: UIImageView!
     @IBOutlet weak var numberLabel: UILabel!
     
-    
     override var isSelected: Bool {
         didSet {
             self.toggle(forState: isSelected)
